@@ -4,6 +4,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { HiOutlineUsers } from "react-icons/hi2";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import ReadBooks from './ReadBooks';
+import WishListBooks from './WishListBooks';
 
 const ListedBooks = () => {
 
@@ -26,9 +27,9 @@ const ListedBooks = () => {
                 {
                     show === "read" && <ReadBooks></ReadBooks>
                 }
-                {/* {
-                    show === "wish" && <ReadBooks></ReadBooks>
-                } */}
+                {
+                    show === "wish" && <WishListBooks></WishListBooks>
+                }
             </div>
         </div>
     );

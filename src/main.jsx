@@ -8,6 +8,7 @@ import ListedBooks from './component/ListedBooks.jsx'
 import PagesRead from './component/PagesRead.jsx'
 import axios from 'axios'
 import Information from './component/Information.jsx'
+import Error from './component/Error.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {path: 'page', Component: PagesRead},
       {path: 'info', Component: Information},
     ]
+  },
+  {
+    path: "*",
+    Component: Error
   }
 ])
 

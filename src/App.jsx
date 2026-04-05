@@ -1,6 +1,7 @@
 import React from 'react';
 import A1 from './A1';
 import Context from './Context/Context';
+import { ToastContainer} from 'react-toastify';
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Context>
           <A1></A1>
       </Context>
+      <ToastContainer />
     </div>
   );
 };

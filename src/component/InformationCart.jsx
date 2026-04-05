@@ -1,19 +1,72 @@
 import React, { useContext } from 'react';
 import { Data } from '../Context/Context';
 import img from "../assets/pngwing 1.png"
+import { toast,Bounce } from 'react-toastify';
 
 const InformationCart = () => {
 
-    const {cart,read,setRead} = useContext(Data)
+    const {cart,read,setRead,wish,setWish} = useContext(Data)
 
+    const f = read.find(v => v.bookId === cart.bookId)
+    const ff = wish.find(v => v.bookId === cart.bookId)
     const a = () => {
-        const f = read.find(v => v.bookId === cart.bookId)
-        if(!f){
+        if(!f && !ff){
             setRead(c => [...c,cart])
+            toast.success('Read Cart Added', {
+                position: "top-right",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
+        }
+        else{
+            toast.error('Cart already Added', {
+                position: "top-right",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
         }
     }
-
-    console.log(read)
+    const b = () => {
+        if(!f && !ff){
+            setWish(c => [...c,cart])
+            toast.success('Wish Cart Added', {
+                position: "top-right",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
+        }
+        else{
+            toast.error('Cart already Added', {
+                position: "top-right",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
+        }
+    }
 
     return (
         <div className='max-w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
@@ -53,7 +106,7 @@ const InformationCart = () => {
                 </div>
                 <div className='flex gap-3'>
                     <button onClick={a} className='btn btn-outline'>Read</button>
-                    <button className='btn btn-info text-white'>Wishlist</button>
+                    <button onClick={b} className='btn btn-info text-white'>Wishlist</button>
                 </div>
             </div>
         </div>
