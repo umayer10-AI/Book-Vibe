@@ -1,9 +1,10 @@
 import React from 'react';
+import Information from './Information';
 
 const ListedBooks = () => {
     return (
-        <div>
-            Listed Books
+        <div className='max-w-[80%] mx-auto'>
+            {/* <Information></Information> */}
         </div>
     );
 };
