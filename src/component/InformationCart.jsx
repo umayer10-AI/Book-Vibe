@@ -4,7 +4,16 @@ import img from "../assets/pngwing 1.png"
 
 const InformationCart = () => {
 
-    const {cart} = useContext(Data)
+    const {cart,read,setRead} = useContext(Data)
+
+    const a = () => {
+        const f = read.find(v => v.bookId === cart.bookId)
+        if(!f){
+            setRead(c => [...c,cart])
+        }
+    }
+
+    console.log(read)
 
     return (
         <div className='max-w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
@@ -43,7 +52,7 @@ const InformationCart = () => {
                     <p>4.8</p>
                 </div>
                 <div className='flex gap-3'>
-                    <button className='btn btn-outline'>Read</button>
+                    <button onClick={a} className='btn btn-outline'>Read</button>
                     <button className='btn btn-info text-white'>Wishlist</button>
                 </div>
             </div>

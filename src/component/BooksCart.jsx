@@ -6,8 +6,7 @@ import { Link } from 'react-router';
 
 const BooksCart = ({p}) => {
 
-    const {cart,setCart} = useContext(Data)
-    console.log(cart)
+    const {setCart} = useContext(Data)
 
     return (
         <div>
