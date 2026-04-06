@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Data } from '../Context/Context';
-import img from "../assets/pngwing 1.png"
 import { toast,Bounce } from 'react-toastify';
+import { AddReadlistLocalDB, AddWishlistLocalDB } from './utils/loaclDb';
 
 const InformationCart = () => {
 
@@ -12,6 +12,7 @@ const InformationCart = () => {
     const a = () => {
         if(!f && !ff){
             setRead(c => [...c,cart])
+            AddReadlistLocalDB(cart)
             toast.success('Read Cart Added', {
                 position: "top-right",
                 autoClose: 500,
@@ -41,6 +42,7 @@ const InformationCart = () => {
     const b = () => {
         if(!f && !ff){
             setWish(c => [...c,cart])
+            AddWishlistLocalDB(cart)
             toast.success('Wish Cart Added', {
                 position: "top-right",
                 autoClose: 500,
@@ -71,7 +73,7 @@ const InformationCart = () => {
     return (
         <div className='max-w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
             <div className='rounded-2xl bg-gray-100 flex justify-center p-10'>
-                <img src={img} className='hover:scale-110 transition duration-500' alt="logo" />
+                <img src={cart.image} className='hover:scale-110 transition duration-500 h-100' alt="logo" />
             </div>
             <div className='space-y-3'>
                 <h2 className='text-3xl font-bold'>{cart.bookName}</h2>
