@@ -22,6 +22,7 @@ const ListedBooks = () => {
                     <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                         <li onClick={() => setS("page")}><a>Pages</a></li>
                         <li onClick={() => setS("rate")}><a>Rating</a></li>
+                        <li onClick={() => setS("year")}><a>Year</a></li>
                     </ul>
                 </div>
 

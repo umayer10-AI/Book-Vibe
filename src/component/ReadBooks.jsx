@@ -5,6 +5,7 @@ import { HiOutlineUsers } from "react-icons/hi2";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { Link } from 'react-router';
 import { toast,Bounce } from 'react-toastify';
+import { removeReadlistLocalDB } from './utils/loaclDb';
 
 const ReadBooks = () => {
 
@@ -13,6 +14,7 @@ const ReadBooks = () => {
     const sort = [...read].sort((a,b) => {
         if(s === "page") return a.totalPages - b.totalPages
         if(s === "rate") return a.rating - b.rating
+        if(s === "year") return a.yearOfPublishing - b.yearOfPublishing
         return 0
     })
 
@@ -43,6 +45,7 @@ const ReadBooks = () => {
                                 <button className='btn btn-warning rounded-full'>Rating: {v.rating}</button>
                                 <button onClick={() => {
                                     setRead(c => c.filter(x => x.bookId !== v.bookId))
+                                    removeReadlistLocalDB(v)
                                     toast.success('Cart remove Successfully', {
                                         position: "top-right",
                                         autoClose: 500,

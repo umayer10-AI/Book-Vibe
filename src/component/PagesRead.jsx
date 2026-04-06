@@ -2,8 +2,10 @@ import React from 'react';
 
 const PagesRead = () => {
     return (
-        <div>
-            Pages Read
+        <div className='max-w-[80%] mx-auto'>
+            <div>
+                Rechart
+            </div>
         </div>
     );
 };

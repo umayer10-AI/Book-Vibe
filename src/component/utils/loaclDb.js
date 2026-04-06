@@ -13,10 +13,17 @@ const AddReadlistLocalDB = (book) => {
         localStorage.setItem("readList", JSON.stringify(allBook))
     }
 }
-const getAllWishlistLocalDB = () => {
-    const allReadList = localStorage.getItem("wishList")
 
-    if(allReadList) return JSON.parse(allReadList)
+const removeReadlistLocalDB = (book) => {
+    const allBook = getAllReadlistLocalDB()
+    const remove = allBook.filter(v => v.bookId !== book.bookId)
+    localStorage.setItem("readList", JSON.stringify(remove))
+}
+
+const getAllWishlistLocalDB = () => {
+    const allWishList = localStorage.getItem("wishList")
+
+    if(allWishList) return JSON.parse(allWishList)
     return []
 }
 const AddWishlistLocalDB = (book) => {
@@ -29,4 +36,10 @@ const AddWishlistLocalDB = (book) => {
     }
 }
 
-export {getAllReadlistLocalDB, AddReadlistLocalDB, getAllWishlistLocalDB, AddWishlistLocalDB}
+const removeWishlistLocalDB = (book) => {
+    const allBook = getAllWishlistLocalDB()
+    const remove = allBook.filter(v => v.bookId !== book.bookId)
+    localStorage.setItem("wishList", JSON.stringify(remove))
+}
+
+export {getAllReadlistLocalDB, AddReadlistLocalDB, getAllWishlistLocalDB, AddWishlistLocalDB,removeReadlistLocalDB, removeWishlistLocalDB}
