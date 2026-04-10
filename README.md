@@ -11,8 +11,8 @@ Book-Vibe is a modern web application that allows users to explore and discover 
 ---
 
 ## 📸 Screenshot
-![Book-Vibe Screenshot](<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/7441897a-7760-4de9-9ab5-364f7d69e7dd" />
-)<img width="1918" height="955" alt="image" src="https://github.com/user-attachments/assets/077b3d57-47f1-443d-841c-86eaa463e7d1" /><img width="1916" height="946" alt="image" src="https://github.com/user-attachments/assets/91a52a7e-9f15-4fe3-8bc2-2edf8b93ab8e" />
+<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/7441897a-7760-4de9-9ab5-364f7d69e7dd" />
+<img width="1918" height="955" alt="image" src="https://github.com/user-attachments/assets/077b3d57-47f1-443d-841c-86eaa463e7d1" /><img width="1916" height="946" alt="image" src="https://github.com/user-attachments/assets/91a52a7e-9f15-4fe3-8bc2-2edf8b93ab8e" />
 
 
 
